@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Feature.js</title>
+    <style>
+      body { -webkit-perspective: 500px; -moz-perspective: 500px; -ms-perspective: 500px; -o-perspective: 500px; perspective: 500px; padding: 3% 5%; margin: 0 auto; max-width: 32em; }
+      .yes { color: green; }
+      .no { color: red; }
+      h4 { margin: 3em 0 0; }
+      .test { background: red; margin: 1em 0; width: 4em; height: 4em; }
+      #results, #tests { border: 1px solid #aaa; padding: 10% 15%; margin: 0 0 4em; }
+      input { font-size: 16px; height: 4em; }
+      .active { background: green !important; }
+      picture * { margin: 1em 0; width: 4em; height: 4em; }
+    </style>
+    <script src="../feature.js"></script>
+  </head>
+  <body>
+    <h1>Feature.js</h1>
+    <h2>Test results:</h2>
+    <ul id="results"></ul>
+    <h2>In use:</h2>
+    <div id="tests">
+
+      <h4>CSS 3D transforms</h4>
+      <div id="css3dtransform" class="test" style="-webkit-transform: rotateY(45deg); -moz-transform: rotateY(45deg); -ms-transform: rotateY(45deg); -o-transform: rotateY(45deg); transform: rotateY(45deg);"></div>
+
+      <h4>CSS transforms</h4>
+      <div id="csstransform" class="test" style="-webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -o-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg);"></div>
+
+      <h4>CSS transitions</h4>
+      <p>Requires click event:</p>
+      <div class="test transition" style="-webkit-transition: all 1.5s ease; -moz-transition: all 1.5s ease; -ms-transition: all 1.5s ease; -o-transition: all 1.5s ease; transition: all 1.5s ease;"></div>
+
+      <h4>AddEventListener</h4>
+      <div class="test" id="addeventlistener"></div>
+
+      <h4>QuerySelectorAll</h4>
+      <div class="test queryselectorall"></div>
+      <div class="test queryselectorall"></div>
+      <div class="test queryselectorall"></div>
+
+      <h4>MatchMedia</h4>
+      <div class="test" id="matchmedia"></div>
+
+      <h4>ClassList API</h4>
+      <div class="test" id="classlist"></div>
+
+      <h4>Placeholders</h4>
+      <input type="text" id="placeholder" placeholder="This is a placeholder">
+
+      <h4>LocalStorage</h4>
+      <div class="test" id="localstorage"></div>
+
+      <h4>Viewport Units</h4>
+      <div class="test" id="viewportunits"></div>
+
+      <h4>REM Units</h4>
+      <div class="test" id="remunits"></div>
+
+      <h4>SVG</h4>
+      <img width="120" height="120" src="test.svg" alt="">
+
+      <h4>Canvas</h4>
+      <canvas class="test" width="120" height="120" id="canvas"></canvas>
+
+      <h4>WebGL</h4>
+      <canvas class="test" width="120" height="120" id="webgl"></canvas>
+
+      <h4>Touch</h4>
+      <p>Requires touchstart event:</p>
+      <div class="test" id="touch"></div>
+
+      <h4>Geolocation</h4>
+      <div class="test" style="width: 10em" id="geolocation"></div>
+
+      <h4>Srcset</h4>
+      <img class="test" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAD/AAAAACwAAAAAAQABAAACAkQBADs=" alt="">
+
+      <h4>Picture element</h4>
+      <picture>
+        <source media="(min-width: 1px)" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAD/AAAAACwAAAAAAQABAAACAkQBADs=">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP4z8DwHwAFAAH/VscvDQAAAABJRU5ErkJggg==" alt="">
+      </picture>
+
+      <h4>CORS</h4>
+      <div class="test" id="cors"></div>
+
+      <h4>Device Motion</h4>
+      <div class="test" id="motion"></div>
+
+      <h4>Device Orientation</h4>
+      <div class="test" id="orientation"></div>
+
+      <h4>Context Menu</h4>
+      <p>Requires right click:</p>
+      <div class="test" id="context" contextmenu="mymenu"></div>
+      <menu type="context" id="mymenu">
+        <menuitem label="FEATURE.JS TEST MENU ITEM" onclick="window.location.reload();"></menuitem>
+      </menu>
+
+
+    </div>
+    <script>
+
+      // Test all the things!
+      feature.testAll();
+
+      // For Each
+      function forEach(array, callback, context) {
+        var length = array.length;
+        var cont, i;
+
+        for (i = 0; i < length; i++) {
+          cont = callback.call(context, i, array[i]);
+          if (cont === false) {
+            break; // Allow early exit
+          }
+        }
+      }
+
+      // Fire event
+      function fireEvent(el, etype) {
+        if (el.dispatchEvent) {
+          var evObj = document.createEvent("Events");
+          evObj.initEvent(etype, true, false);
+          el.dispatchEvent(evObj);
+        } else if (el.fireEvent) {
+          el.fireEvent("on" + etype);
+        }
+      }
+
+      // Logger
+      function log(support, value) {
+        var results = document.getElementById("results");
+        results.innerHTML += "<li class='" + (support ? "yes" : "no") + "'>" + value + " " + (support ? "" : "not") + " supported </li>";
+      }
+
+      // Feature tests
+      log(feature.css3Dtransform, "CSS 3D transforms");
+      log(feature.cssTransform, "CSS transforms");
+      log(feature.cssTransition, "CSS transitions");
+      log(feature.contextMenu, "Context Menu");
+      log(feature.addEventListener, "AddEventListener");
+      log(feature.querySelectorAll, "QuerySelectorAll");
+      log(feature.matchMedia, "MatchMedia");
+      log(feature.async, "Async attribute");
+      log(feature.defer, "Defer attribute");
+      log(feature.deviceMotion, "DeviceMotion");
+      log(feature.deviceOrientation, "DeviceOrientation");
+      log(feature.classList, "ClassList API");
+      log(feature.placeholder, "Placeholders");
+      log(feature.localStorage, "LocalStorage");
+      log(feature.historyAPI, "History API");
+      log(feature.serviceWorker, "serviceWorkers");
+      log(feature.viewportUnit, "Viewport Units");
+      log(feature.remUnit, "REM Units");
+      log(feature.geolocation, "Geolocation");
+      log(feature.srcset, "Srcset attribute");
+      log(feature.sizes, "Sizes attribute");
+      log(feature.pictureElement, "Picture element");
+      log(feature.canvas, "Canvas");
+      log(feature.svg, "SVG");
+      log(feature.webGL, "WebGL");
+      log(feature.cors, "CORS");
+      log(feature.touch, "Touch");
+
+      // 3D Transforms
+      if (feature.css3Dtransform) {
+        var needs3Dtransform = document.getElementById("css3dtransform");
+        needs3Dtransform.className += " active";
+      }
+
+      // 2D Transforms
+      if (feature.cssTransform) {
+        var needsTransform = document.getElementById("csstransform");
+        needsTransform.className += " active";
+      }
+
+      // Transitions
+      try {
+        var needsTransitions = document.querySelectorAll(".transition");
+        forEach(needsTransitions, function(i) {
+          needsTransitions[i].addEventListener("click", function(event) {
+            event.preventDefault();
+            this.className += " active";
+          }, false);
+        });
+      } catch(err) {}
+
+      // AddEventListener
+      try {
+        var needsListener = document.getElementById("addeventlistener");
+        window.addEventListener("load", function(event) {
+          event.preventDefault();
+          needsListener.className += " active";
+        }, false);
+      } catch(err) {}
+
+      // QuerySelectorAll
+      try {
+        var needsQuerySelector = document.querySelectorAll(".test.queryselectorall");
+        forEach(needsQuerySelector, function(i) {
+          needsQuerySelector[i].className += " active";
+        });
+      } catch(err) {}
+
+      // Matchmedia
+      try {
+        var needsMatchMedia = document.getElementById("matchmedia");
+        if (window.matchMedia("(min-width: 1px)").matches) {
+          needsMatchMedia.className += " active";
+        }
+      } catch(err) {}
+
+      // ClassList API
+      try {
+        var needsClassList = document.getElementById("classlist");
+        needsClassList.classList.add("active");
+      } catch(err) {}
+
+      // LocalStorage
+      try {
+        var needsLocalStorage = document.getElementById("localstorage");
+        var test = "active";
+        localStorage.setItem(test, test);
+        needsLocalStorage.className += " " + localStorage.getItem(test);
+        localStorage.removeItem(test);
+      } catch(err) {}
+
+      // Viewport Units
+      try {
+        var needsViewportUnits = document.getElementById("viewportunits");
+        needsViewportUnits.style.width = "50vw";
+        if (feature.viewportUnit) {
+          needsViewportUnits.className += " active";
+        }
+      } catch(err) {}
+
+      // REM Units
+      try {
+        var needsREMUnits = document.getElementById("remunits");
+        needsREMUnits.style.width = "10rem";
+        if (feature.remUnit) {
+          needsREMUnits.className += " active";
+        }
+      } catch(err) {}
+
+      // Touch
+      try {
+        var needsTouch = document.getElementById("touch");
+        needsTouch.addEventListener("touchstart", function() {
+          this.className += " active";
+        },false);
+        needsTouch.addEventListener("MSPointerDown", function() {
+          this.className += " active";
+        },false);
+        needsTouch.addEventListener("gesturestart", function() {
+          this.className += " active";
+        },false);
+      } catch(err) {}
+
+      // Canvas
+      try {
+        var needCanvas = document.getElementById("canvas");
+        var ctx = needCanvas.getContext("2d");
+        ctx.fillStyle = "green";
+        ctx.fillRect(0,0,120,120);
+      } catch(err) {}
+
+      // WebGL
+      try {
+        var gl;
+        function initWebGL(canvas) {
+          gl = null;
+          try {
+            gl = canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
+          } catch(e) {}
+          return gl;
+        }
+        var needsWebGL = document.getElementById("webgl");
+        if (needsWebGL.getContext) {
+          gl = initWebGL(needsWebGL);
+          if (gl) {
+            gl.clearColor(0.0, 255, 0.0, 1.0);
+            gl.enable(gl.DEPTH_TEST);
+            gl.depthFunc(gl.LEQUAL);
+            gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);
+          }
+        }
+      } catch(err) {}
+
+      // Geolocation
+      try {
+        var needsGeolocation = document.getElementById("geolocation");
+        navigator.geolocation.getCurrentPosition(function(pos) {
+          needsGeolocation.innerHTML = pos.coords.latitude + " " + pos.coords.longitude;
+        });
+        if (feature.geolocation) {
+          needsGeolocation.className += " active";
+        }
+      } catch(err) {}
+
+      // Placeholder
+      try {
+        var needsPlaceholder = document.getElementById("placeholder");
+        if ("placeholder" in document.createElement("input")) {
+          needsPlaceholder.className += " active";
+        }
+      } catch(err) {}
+
+      // Cors
+      function createCORSRequest(method, url) {
+        var xhr = new XMLHttpRequest();
+        if ("withCredentials" in xhr) {
+          xhr.open(method, url, true);
+        } else {
+          xhr = null;
+        }
+        return xhr;
+      }
+      var xhr = createCORSRequest("GET", "http://featurejs.com");
+      if (xhr) {
+        var needsCors = document.getElementById("cors");
+        needsCors.className += " active";
+      }
+
+      // Device motion
+      try {
+        if ("DeviceMotionEvent" in window) {
+          var needsMotion = document.getElementById("motion");
+          window.addEventListener("devicemotion", function() {
+            needsMotion.className += " active";
+          }, false);
+          fireEvent(window, "devicemotion");
+        }
+      } catch(err) {}
+
+      // Device orientation
+      try {
+        if ("DeviceOrientationEvent" in window) {
+          var needsOrientation = document.getElementById("orientation");
+          window.addEventListener("deviceorientation", function() {
+            needsOrientation.className += " active";
+          }, false);
+          fireEvent(window, "deviceorientation");
+        }
+      } catch(err) {}
+
+      // Context menu
+      if (feature.contextMenu) {
+        var needsContextMenu = document.getElementById("context");
+        needsContextMenu.className += " active";
+      }
+
+    </script>
+  </body>
+</html>
