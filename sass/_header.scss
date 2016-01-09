@@ -1,0 +1,70 @@
+
+/* HEADER
+--------------------------------------------- */
+
+header {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: $orange;
+  position: relative;
+  @include mask(30%);
+  max-height: em(880);
+  min-height: 650px;
+  overflow: hidden;
+  font-size: 16px;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+  @media (min-height: 780px) and (min-width: 1300px) { font-size: 17px }
+  @media (min-height: 880px) and (min-width: 1350px) { font-size: 18px }
+  @media (min-height: 980px) and (min-width: 1400px) { font-size: 19px }
+  @media (min-height: 1080px) and (min-width: 1450px) { font-size: 20px }
+  @media (min-height: 1180px) and (min-width: 1500px) { font-size: 21px }
+  @media (max-width: 1100px) { font-size: 15px }
+  @media (max-height: 700px) { font-size: 15px }
+  @include breakpoint(medium) {
+    max-height: 1000px;
+    min-height: 700px;
+  }
+  @include breakpoint(small) {
+    max-height: 580px;
+    min-height: 500px;
+  }
+  @include breakpoint (watch) {
+    min-height: 0;
+    height: auto;
+  }
+  &:before {
+    background: rgba($black, .15);
+    position: absolute;
+    height: em(6);
+    width: 100%;
+    content: "";
+    z-index: 3;
+    left: 0;
+    top: 0;
+    @include breakpoint(small) { height: 6px }
+    @include breakpoint(watch) { display: none }
+  }
+  .wrapper {
+    margin: -10.8em auto 0;
+    position: absolute;
+    max-width: none;
+    width: 100%;
+    top: 50%;
+    @include breakpoint(medium) { margin-top: em(-120,16) }
+    @include breakpoint(medium-s) { margin-top: em(-107.5,16) }
+    @include breakpoint(small) { margin-top: em(-75,16) }
+    @include breakpoint(medium-tall) { margin-top: em(-140, 16) }
+    @include breakpoint(watch) {
+      position: static;
+      padding-bottom: 9em;
+      margin-top: 0.5em;
+      top: auto;
+    }
+    div {
+      -webkit-animation: fade .8s forwards;
+      animation: fade .8s forwards;
+    }
+  }
+}

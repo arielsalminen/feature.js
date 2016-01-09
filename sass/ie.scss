@@ -1,0 +1,54 @@
+
+/* OLD IE FIXES
+--------------------------------------------- */
+
+html.ie {
+
+  body {
+    font-size: 14px;
+  }
+  .wrapper {
+    width: 500px;
+  }
+  nav ul {
+    font-size: 14px;
+  }
+  h1 {
+    font-size: 52px;
+  }
+  h2 {
+    font-size: 16px;
+  }
+  header {
+    height: 650px;
+    .wrapper {
+      position: relative;
+      width: auto;
+      margin-top: -230px;
+      *margin-top: -10.8em;
+      _margin-left: -300px;
+      _position: absolute;
+      _width: 600px;
+      _left: 50%;
+    }
+  }
+  .features {
+    margin-top: -170px;
+    font-size: 14px;
+    width: 650px;
+    *left: 42%;
+    li {
+      *width: 32%;
+    }
+  }
+  .logo {
+    position: relative;
+    *position: absolute;
+    top: 30px;
+  }
+  footer {
+    padding: 2em 0;
+    font-size: 11px;
+  }
+
+}

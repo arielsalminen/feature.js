@@ -1,0 +1,46 @@
+
+/* FOOTER
+--------------------------------------------- */
+
+footer {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font: normal 400 14px/1.8 $heading;
+  background: $black-alt;
+  @include mask(25%);
+  color: rgba($white-alt, .8);
+  padding: 1.9em 1em 1.9em;
+  margin-top: 7em;
+  float: left;
+  width: 100%;
+  @include breakpoint(small) { font-size: 12px }
+  @include breakpoint(tiny) { font-size: 10px }
+  a {
+    margin-left: 1em;
+    color: $white;
+    position: relative;
+    white-space: nowrap;
+    border-bottom: 1px solid rgba($white, .3);
+    font-weight: 900;
+    &:after {
+      content: "";
+      width: 1em;
+      height: 1em;
+      background: url("/img/finger.svg") no-repeat right top;
+      background-size: contain;
+      position: absolute;
+      font-weight: 400;
+      top: -0.2em;
+      right: -0.85em;
+      line-height: 1;
+      font-size: 1.75em;
+    }
+    &:hover {
+      border-bottom: 1px solid $white;
+      &:after {
+        -webkit-animation: move .8s infinite;
+        animation: move .8s infinite;
+      }
+    }
+  }
+}

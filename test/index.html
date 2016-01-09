@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Feature.js</title>
+    <title>Feature.js tests</title>
     <style>
       body { -webkit-perspective: 500px; -moz-perspective: 500px; -ms-perspective: 500px; -o-perspective: 500px; perspective: 500px; padding: 3% 5%; margin: 0 auto; max-width: 32em; }
       .yes { color: green; }
@@ -15,7 +15,7 @@
       .active { background: green !important; }
       picture * { margin: 1em 0; width: 4em; height: 4em; }
     </style>
-    <script src="../feature.js"></script>
+    <script src="/js/feature.min.js"></script>
   </head>
   <body>
     <h1>Feature.js</h1>
@@ -154,10 +154,10 @@
       log(feature.placeholder, "Placeholders");
       log(feature.localStorage, "LocalStorage");
       log(feature.historyAPI, "History API");
-      log(feature.serviceWorker, "serviceWorkers");
       log(feature.viewportUnit, "Viewport Units");
       log(feature.remUnit, "REM Units");
       log(feature.geolocation, "Geolocation");
+      log(feature.serviceWorker, "Service Worker");
       log(feature.srcset, "Srcset attribute");
       log(feature.sizes, "Sizes attribute");
       log(feature.pictureElement, "Picture element");

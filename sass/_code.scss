@@ -1,0 +1,26 @@
+
+/* CODE BLOCKS
+--------------------------------------------- */
+
+pre, code {
+  font-family: $code;
+  color: $black-alt;
+}
+
+pre {
+  word-break: break-all;
+  white-space: pre;
+  white-space: pre-wrap;
+  font-size: em(15,18);
+  border-radius: 1px;
+  margin: 0 0 2em;
+  color: $black;
+  width: 100%;
+}
+
+
+/* SYNTAX HIGHLIGHTING
+--------------------------------------------- */
+
+.kwd, .pun, .str,
+.atv, .com { color: lighten($black-alt2, 5%) }

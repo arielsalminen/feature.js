@@ -1,0 +1,47 @@
+
+/* NAVIGATION
+--------------------------------------------- */
+
+nav {
+  ul {
+    font: normal 900 em(18)/1.6 $heading;
+    @include prevent-user-select;
+    position: absolute;
+    list-style: none;
+    z-index: 4;
+    right: 8%;
+    top: 0;
+    @include breakpoint(medium) {
+      display: inline-block;
+      position: static;
+      margin: 0 auto;
+    }
+    @include breakpoint(small) { font-size: em(15) }
+    @include breakpoint(watch) { display: none }
+  }
+  li { float: left }
+  a {
+    -webkit-transition: color .2s ease;
+    transition: color .2s ease;
+    padding: em(64,18) 0 em(16,18);
+    margin-left: em(30,18);
+    text-decoration: none;
+    color: $white-alt;
+    float: left;
+    @include breakpoint(medium) { padding-top: em(40,15) }
+    @include breakpoint(small) {
+      padding-top: em(28,15);
+      margin: 0 em(8,15);
+    }
+  }
+  .active a {
+    border-top: em(6,18) solid $black;
+    padding-top: em(58.3,18);
+    color: $black;
+    @include breakpoint(medium) { padding-top: em(42.3,18) }
+    @include breakpoint(small) {
+      border-top: 6px solid $black;
+      padding-top: em(21,15);
+    }
+  }
+}

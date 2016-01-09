@@ -1,0 +1,81 @@
+
+/* LOGO
+--------------------------------------------- */
+
+.logo {
+  @include prevent-user-select;
+  position: absolute;
+  top: em(49);
+  z-index: 4;
+  left: 9.4%;
+  @include breakpoint(medium) {
+    margin: em(-240) 0 0 em(-42);
+    left: 50%;
+    top: 50%;
+  }
+  @include breakpoint(medium-s) { margin: em(-215) 0 0 em(-38) }
+  @include breakpoint(medium-tall) { margin-top: em(-260) }
+  @include breakpoint(small) { margin: em(-170) 0 0 em(-33) }
+  @include breakpoint(watch) {
+    display: inline-block;
+    margin: 2em auto 0;
+    position: relative;
+    left: 0.23em;
+    top: auto;
+  }
+  img {
+    height: em(64);
+    width: em(64);
+    @include breakpoint(medium) { height: em(100); width: em(100) }
+    @include breakpoint(medium-s) { height: em(90); width: em(90) }
+    @include breakpoint(small) { height: em(80); width: em(80) }
+    @include breakpoint(watch) { height: em(50); width: em(50) }
+  }
+  &:after,
+  &:before {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    @include breakpoint(medium) { display: none }
+  }
+  &:after {
+    font: normal 400 em(12)/em(40,12) $heading;
+    content: attr(data-speech-bubble);
+    background: $white-alt;
+    padding: 0 1.3em 0 1em;
+    border-radius: em(5);
+    white-space: nowrap;
+    overflow: hidden;
+    left: em(70,12);
+    top: em(8,12);
+    color: $black;
+    max-width: 0;
+  }
+  &:before {
+    border: solid transparent;
+    border-color: rgba($white, 0);
+    border-right-color: $white-alt;
+    border-width: em(6,12);
+    margin-left: em(-6,12);
+    left: em(46.5,12);
+    top: em(16,12);
+    content: "";
+    height: 0;
+    width: 0;
+  }
+  &:hover {
+    &:after,
+    &:before {
+      -webkit-transition: all .5s 1s linear;
+      transition: all .5s 1s linear;
+      visibility: visible;
+      opacity: 1;
+    }
+    &:after { max-width: 300px }
+  }
+  &:active,
+  &:focus {
+    outline: none;
+    opacity: 1;
+  }
+}

@@ -1,0 +1,10 @@
+# www.robotstxt.org/
+
+# Allow crawling of all content
+User-agent: *
+Disallow: /js
+Disallow: /css
+
+
+User-agent: Twitterbot
+Disallow:

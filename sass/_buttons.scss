@@ -1,0 +1,80 @@
+
+/* BUTTONS
+--------------------------------------------- */
+
+.btn {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+  margin-right: em(16,18);
+  border-radius: em(4,18);
+  vertical-align: middle;
+  display: inline-block;
+  font-family: $heading;
+  background: $orange;
+  position: relative;
+  font-style: normal;
+  text-align: center;
+  text-shadow: none;
+  color: $white-alt;
+  line-height: 3.1;
+  font-weight: 900;
+  width: em(190);
+  height: em(50);
+  @include breakpoint(medium-s) {
+    padding: em(16,18) em(50,18) em(17,18);
+    display: inline-block;
+    margin: 0 0 0.7em;
+  }
+  @include breakpoint(watch) { padding: em(16,18) em(30,18) em(18,18) }
+  &:active {
+    background: mix($orange, $black, 90%);
+    opacity: 1;
+  }
+  &.focus { box-shadow: 0 0 20px rgba(mix($orange, $black, 90%), .7) }
+  b {
+    -webkit-transition: -webkit-transform .25s ease;
+    transition: transform .25s ease;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    position: absolute;
+    font-style: normal;
+    font-weight: 900;
+    width: 100%;
+    left: 0;
+    top: 0;
+  }
+  i {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    color: rgba($white, .6);
+    letter-spacing: -0.5px;
+    position: absolute;
+    visibility: hidden;
+    font-style: normal;
+    margin-left: .1em;
+    line-height: 3.15;
+    font-weight: 400;
+    right: 1.7em;
+    opacity: 0;
+    top: 0;
+  }
+  .css3dtransform &:hover {
+    b {
+      -webkit-transform: translateX(-1.7em);
+      transform: translateX(-1.7em);
+    }
+    i {
+      -webkit-transition: opacity .2s .2s ease;
+      transition: opacity .2s .2s ease;
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+
+.btn-alt {
+  margin-left: em(10,18);
+  @include breakpoint(small) { margin: 0 }
+}

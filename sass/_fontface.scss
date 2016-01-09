@@ -1,0 +1,47 @@
+
+/* CUSTOM FONTS
+--------------------------------------------- */
+
+@font-face {
+  font-family: "Lato-custom";
+  font-style: normal;
+  font-weight: 400;
+  src: font-url("lato/lato-regular.eot");
+  src: font-url("lato/lato-regular.eot?#iefix") format("embedded-opentype"),
+       font-url("lato/lato-regular.woff2") format("woff2"),
+       font-url("lato/lato-regular.woff") format("woff"),
+       font-url("lato/lato-regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Lato-custom";
+  font-style: normal;
+  font-weight: 900;
+  src: font-url("lato/lato-black.eot");
+  src: font-url("lato/lato-black.eot?#iefix") format("embedded-opentype"),
+       font-url("lato/lato-black.woff2") format("woff2"),
+       font-url("lato/lato-black.woff") format("woff"),
+       font-url("lato/lato-black.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Lora-custom";
+    font-style: normal;
+    font-weight: 400;
+    src: font-url("lora/lora-regular.eot");
+    src: font-url("lora/lora-regular.eot?#iefix") format("embedded-opentype"),
+         font-url("lora/lora-regular.woff2") format("woff2"),
+         font-url("lora/lora-regular.woff") format("woff"),
+         font-url("lora/lora-regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Lora-custom";
+    font-style: italic;
+    font-weight: 400;
+    src: font-url("lora/lora-italic.eot");
+    src: font-url("lora/lora-italic.eot?#iefix") format("embedded-opentype"),
+         font-url("lora/lora-italic.woff2") format("woff2"),
+         font-url("lora/lora-italic.woff") format("woff"),
+         font-url("lora/lora-italic.ttf") format("truetype");
+}

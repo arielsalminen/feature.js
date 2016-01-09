@@ -1,0 +1,21 @@
+
+/* ANIMATIONS
+--------------------------------------------- */
+
+@-webkit-keyframes fade {
+  0% { opacity: 0 }
+  100% { opacity: 1 }
+}
+@keyframes fade {
+  0% { opacity: 0 }
+  100% { opacity: 1 }
+}
+
+@-webkit-keyframes move {
+  0%,100% { -webkit-transform: translateY(0) }
+  50% { -webkit-transform: translateY(-5px) }
+}
+@keyframes move {
+  0%,100% { transform: translateY(0) }
+  50% { transform: translateY(-5px) }
+}

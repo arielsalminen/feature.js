@@ -1,0 +1,103 @@
+@charset "utf-8";
+
+
+/* HELPERS
+--------------------------------------------- */
+
+$browser-context: 16;
+
+@function em($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}em
+}
+
+@mixin mask($size) {
+  -webkit-mask-image: image-url("mask-comp.png");
+  -webkit-mask-size: $size;
+  .nomask & { -webkit-mask-image: none }
+}
+
+@mixin link-line($shadow, $shadow-context, $color, $position, $size) {
+  text-shadow: em(1,$shadow-context) 0 0 $shadow, em(2,$shadow-context) 0 0 $shadow,
+               em(3,$shadow-context) 0 0 $shadow, em(-1,$shadow-context) 0 0 $shadow,
+               em(-2,$shadow-context) 0 0 $shadow, em(-3,$shadow-context) 0 0 $shadow;
+  background-image: -webkit-linear-gradient($color, $color);
+  background-image: -moz-linear-gradient($color, $color);
+  background-image: -ms-linear-gradient($color, $color);
+  background-image: linear-gradient($color, $color);
+  background-position: 0 $position;
+  background-size: $size $size;
+  background-repeat: repeat-x;
+}
+
+@mixin prevent-user-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+
+/* COLORS
+--------------------------------------------- */
+
+$orange     :   rgb(255,100,67);
+$black      :   rgb(49,49,48);
+$black-alt  :   darken($black, 5%);
+$black-alt2 :   lighten($black, 10%);
+$white      :   rgb(255,255,255);
+$white-alt  :   mix($white, $orange, 95%);
+
+
+/* TYPEFACES
+--------------------------------------------- */
+
+$body       :   "Lora-custom", Georgia, serif;
+$heading    :   "Lato-custom", sans-serif;
+$code       :   Monaco, "Panic Sans", Menlo, Consolas, "Lucida Console", monospace, monospace;
+
+
+/* MEDIA QUERIES
+--------------------------------------------- */
+
+@mixin breakpoint($media) {
+  @if $media == medium {
+    @media (max-width: 860px) { @content; }
+  }
+  @if $media == medium-tall {
+    @media (max-width: 860px) and (min-width: 561px) and (min-height: 900px) { @content; }
+  }
+  @if $media == medium-s {
+    @media (max-width: 660px) { @content; }
+  }
+  @if $media == small {
+    @media (max-width: 560px) { @content; }
+  }
+  @if $media == tiny {
+    @media (max-width: 400px) { @content; }
+  }
+  @if $media == tiny-s {
+    @media (max-width: 340px) { @content; }
+  }
+  @if $media == watch {
+    @media (max-width: 300px) { @content; }
+  }
+}
+
+
+/* FEATUREJS.COM STYLES
+--------------------------------------------- */
+
+@import "fontface";
+@import "reset";
+@import "animation";
+@import "base";
+@import "selection";
+@import "typography";
+@import "logo";
+@import "navigation";
+@import "header";
+@import "features";
+@import "code";
+@import "buttons";
+@import "footer";
+@import "notice";

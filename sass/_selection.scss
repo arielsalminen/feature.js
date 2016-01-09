@@ -1,0 +1,49 @@
+
+/* SELECTIONS
+--------------------------------------------- */
+
+h1::-moz-selection,
+h1 a::-moz-selection,
+h2::-moz-selection,
+h2 span::-moz-selection {
+  background: rgba($black, .99) none;
+  text-shadow: none;
+  color: $white;
+}
+
+h1::selection,
+h1 a::selection,
+h2::selection,
+h2 span::selection {
+  background: rgba($black, .99) none;
+  text-shadow: none;
+  color: $white;
+}
+
+::-moz-selection {
+  background: rgba($orange, .99) none;
+  text-shadow: none;
+  color: $white;
+}
+
+::selection {
+  background: rgba($orange, .99) none;
+  text-shadow: none;
+  color: $white;
+}
+
+pre::-moz-selection,
+code::-moz-selection,
+code span::-moz-selection {
+  background: $black;
+  color: $white;
+}
+
+pre::selection,
+code::selection,
+code span::selection {
+  background: $black;
+  color: $white;
+}
+
+::selection:window-inactive { background: rgba($black, .3) }

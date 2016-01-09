@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<!--[if lt IE 9]><html class="ie" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--><html lang="en"><!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-title" content="Feature.js">
+    <meta name="description" content="Feature.js is a fast, simple and lightweight browser feature detection library. It has no dependencies and weighs only 1kb minified and gzipped.">
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="theme-color" content="#313130">
+    <title>Feature.js</title>
+
+    <meta property="og:title" content="Feature.js">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://featurejs.com/">
+    <meta property="og:image" content="http://featurejs.com/img/badge.jpg?v=1">
+    <meta property="og:description" content="Feature.js is a fast, simple and lightweight browser feature detection library. It has no dependencies and weighs only 1kb minified and gzipped.">
+    <meta property="og:site_name" content="Feature.js">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site:id" content="29015597">
+    <meta name="twitter:title" content="Feature.js">
+    <meta name="twitter:description" content="Feature.js is a fast, simple and lightweight browser feature detection library. It has no dependencies and weighs only 1kb minified and gzipped.">
+    <meta name="twitter:image:src" content="http://featurejs.com/img/badge.jpg?v=1">
+
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/img/appicon.png">
+    <link href="/css/styles.css" rel="stylesheet" type="text/css">
+    <!--[if lt IE 9]>
+      <link href="/css/ie.css" rel="stylesheet" type="text/css">
+      <script src="/js/html5shiv.js"></script>
+    <![endif]-->
+    <script src="/js/all.min.js"></script>
+  </head>
+  <body onload="prettyPrint()">
+    <div class="notice" title="Dismiss?"><p>Feature.js 1.0 is released!</p> <img src="/img/close.svg" alt="Dismiss" onerror="this.onerror=null;this.src='/img/close.png'"></div>
+    <header id="top">
+      <nav>
+        <ul>
+          <li class="active"><a href="/">Home</a></li>
+          <li><a href="#how-to-use" data-scroll>Usage</a></li>
+          <li><a href="#download" data-scroll>Download</a></li>
+          <li><a href="https://github.com/viljamis/feature.js/"><span class="r">View on </span>GitHub</a></li>
+        </ul>
+      </nav>
+      <a href="/" class="logo" tabindex="-1" data-speech-bubble="What’s orange and sounds like a parrot?">
+        <img src="/img/detective.svg" alt="Feature Detective" onerror="this.onerror=null;this.src='/img/detective.png'">
+      </a>
+      <div class="wrapper">
+        <div>
+          <h1><a href="/">Feature.js</a>, a&nbsp;feature detection library in&nbsp;1kb</h1>
+          <h2>A&nbsp;Fast<span class="r">, simple</span> and lightweight <span class="r">browser</span> feature detection library written in plain J<span class="r">ava</span>S<span class="r">cript</span>. Try&nbsp;it by opening this page in different&nbsp;browsers<span class="r"> and seeing&nbsp;the&nbsp;results</span>:</h2>
+      </div>
+      </div>
+    </header>
+    <article>
+      <div class="wrapper">
+        <div class="features-wrapper">
+          <ul class="features" id="results">
+            <li id="no-js"><em>Please enable JavaScript to see the feature test results.</em></li>
+          </ul>
+        </div>
+        <h3 id="what-is-it">What is it</h3>
+        <p>Feature.js is a fast, simple and light&shy;weight browser feature detec&shy;tion library. It&nbsp;has no dependencies and weighs only 1kb minified and gzipped. Feature.js automati&shy;cally initia&shy;lizes itself on page load, so you don’t have to. It doesn’t, however, run any tests while ini&shy;tia&shy;lizing, so it will only ever run them when you ask it to. This makes it perform very&nbsp;fast.</p>
+        <p>With <a href="/">Feature.js</a>, it’s simple to build progres&shy;sively enhanced expe&shy;riences that use feature detection to determine if a code can be execu&shy;ted in the user’s browser.</p>
+        <h3 id="how-to-use">How to use</h3>
+        <p>First, include the script some&shy;where on your page — usually either in the <code>&lt;head&gt;</code> or just before the  <code>&lt;/body&gt;</code> closing tag. No need to initialize or do anything else really, all the feature tests are now available for usage:</p>
+        <pre class="prettyprint lang-js"><code>if (feature.webGL) {
+  console.log("WebGL supported");
+} else {
+  console.log("WebGL not supported");
+}</code></pre>
+        <p>If you want to add a class to the <code>&lt;html&gt;</code> element like <a href="http://modernizr.com" rel="external">Modernizr</a> does when some&shy;thing is supported, that’s simple:</p>
+        <pre class="prettyprint lang-js"><code>if (feature.webGL) {
+  document.documentElement.className += " webgl";
+}</code></pre>
+        <p>Feature.js also provides an easy way to run all the tests at once and automatically add these classes:</p>
+        <pre class="prettyprint lang-js"><code>feature.testAll();</code></pre>
+        <p>Combining multiple feature tests is possible too, you can just write an if state&shy;ment like:</p>
+        <pre class="prettyprint lang-js"><code>if (feature.canvas &amp;&amp; feature.webGL) {
+  console.log("Canvas and WebGL are supported")
+}</code></pre>
+        <p>When you want to target JavaScript only towards browsers that support the features you need, you can check inside a function if the tests return false and stop further execution:</p>
+        <pre class="prettyprint lang-js"><code>(function() {
+  if (!feature.webGL || !feature.svg) {
+    console.log("Stopping… WebGL or SVG isn’t supported");
+    return;
+  }
+  console.log("Browser supports both WebGL &amp; SVG");
+})();</code></pre>
+        <h3 id="gotchas">Gotchas</h3>
+        <p>There are few gotchas related to browser feature detection in general and these things are good to keep in mind when using the <a href="/">Feature.js</a> library.</p>
+        <p><strong>Touch:</strong> Feature.js tries to detect if touch events are supported, but this doesn’t neces&shy;sarily reflect a touch&shy;screen device. Some&shy;times you might get a false positive on a device that doesn’t really have touchscreen since it’s virtually <a href="http://www.stucox.com/blog/you-cant-detect-a-touchscreen/" rel="external">impossible</a> nowadays to detect this accurately. For 95-98% of the time this test should be correct though, but you should always keep this in mind when using this detection.</p>
+        <p><strong>CSS 3D Transforms:</strong> Current imple&shy;men&shy;tation might give false positive on some older Android stock WebKits in very rare cases. <a href="https://github.com/viljamis/feature.js/issues/1" rel="external">This issue</a> is cur&shy;rently being tracked and will be addres&shy;sed in the future releases if needed.</p>
+        <p><strong>Device Motion/&shy;Orientation:</strong> Keep in mind that many desk&shy;top browsers sup&shy;port these event listeners, and will hence give a&nbsp;positive result even though the device might not have the <a href="http://www.html5rocks.com/en/tutorials/device/orientation/" rel="external">needed&nbsp;sensors</a>.</p>
+        <p><strong>Placeholders:</strong> Feature.js gives false negative for iOS&nbsp;3 Safari, but since this OS has basically no users, it’s not consi&shy;dered an&nbsp;issue at the moment.</p>
+        <h3 id="api-reference">API reference</h3>
+        <p>Below you’ll find a list of all the available feature tests and how to call them. Feature.js has also one public method, <code>testAll</code>, that runs all the tests and adds the suppor&shy;ted ones as classes to the <code>&lt;html&gt</code> element.</p>
+        <pre class="prettyprint lang-js"><code>feature.async
+feature.addEventListener
+feature.canvas
+feature.classList
+feature.cors
+feature.contextMenu
+feature.css3Dtransform
+feature.cssTransform
+feature.cssTransition
+feature.defer
+feature.deviceMotion
+feature.deviceOrientation
+feature.geolocation
+feature.historyAPI
+feature.placeholder
+feature.localStorage
+feature.matchMedia
+feature.pictureElement
+feature.querySelectorAll
+feature.remUnit
+feature.serviceWorker
+feature.sizes
+feature.srcset
+feature.svg
+feature.touch
+feature.viewportUnit
+feature.webGL</code></pre>
+        <pre class="prettyprint lang-js"><code>feature.testAll();</code></pre>
+        <p class="center" id="download">
+          <a href="https://github.com/viljamis/feature.js/archive/master.zip" class="btn hover"><b>Download</b> <i>(v1.0.0)</i></a><br>or <br><a href="https://github.com/viljamis/feature.js" rel="external" class="btn-alt"><em>View&nbsp;Source&nbsp;on&nbsp;GitHub</em></a>
+        </p>
+      </div>
+    </article>
+    <footer>
+      <div class="wrapper">
+        &copy; 2016 Feature.js. All&nbsp;rights&nbsp;reserved.
+        <a href="#top" data-scroll>Back to top</a>
+      </div>
+    </footer>
+    <script src="/js/min/scripts-min.js"></script>
+  </body>
+</html>

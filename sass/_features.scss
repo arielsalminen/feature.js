@@ -1,0 +1,89 @@
+
+/* FEATURES LIST
+--------------------------------------------- */
+
+.features {
+  -webkit-animation: fade .8s .35s both;
+  animation: fade .8s .35s both;
+  -webkit-font-smoothing: subpixel-antialiased;
+  background: $black-alt;
+  background: rgba($black-alt, .9);
+  margin: -7.5em 0 3em -23em;
+  padding: 10% 0 10% 15%;
+  border-radius: 1px;
+  @include mask(40%);
+  list-style: circle;
+  position: relative;
+  color: $white-alt;
+  text-align: left;
+  overflow: hidden;
+  font-size: 18px;
+  width: 46em;
+  z-index: 3;
+  left: 50%;
+  @media (min-height: 780px) and (min-width: 1300px) { font-size: 19px }
+  @media (min-height: 880px) and (min-width: 1350px) { font-size: 20px }
+  @media (min-height: 980px) and (min-width: 1400px) { font-size: 21px }
+  @media (min-height: 1080px) and (min-width: 1450px) { font-size: 22px }
+  @media (min-height: 1180px) and (min-width: 1500px) { font-size: 23px }
+  @media (max-width: 1100px) { font-size: 17px }
+  @media (max-height: 700px) { font-size: 17px }
+  @include breakpoint(medium) {
+    margin: -8.5em 0 3em;
+    font-size: 16px;
+    width: 100%;
+    left: auto;
+  }
+  @include breakpoint(medium-tall) { margin-top: -14em }
+  @include breakpoint(medium-s) {
+    margin-left: -10%;
+    width: 120%;
+  }
+  @include breakpoint(small) {
+    padding: 7% 0 7% 13%;
+    font-size: 12px;
+    margin-left: 0;
+    width: 100%;
+  }
+  @include breakpoint(tiny) {
+    list-style-position: inside;
+    padding: 7% 0 7% 7%;
+    margin-left: -1%;
+    width: 102%;
+  }
+  @include breakpoint(tiny-s) { font-size: 11px }
+  @include breakpoint(watch) {
+    padding: 13% 0 13% 7%;
+    margin-left: 0;
+    width: 100%;
+  }
+  &.all li:after {
+    font: normal 900 100%/1 $heading;
+    margin: em(3) 0 0 em(5);
+    position: absolute;
+    color: #aacf74;
+    content: "✔";
+  }
+  li {
+    white-space: nowrap;
+    width: 33.3333%;
+    float: left;
+    @include breakpoint(medium) { width: 50% }
+    @include breakpoint(watch) {
+      text-align: center;
+      margin-left: -2em;
+      width: auto;
+      float: none;
+    }
+    &.no em {
+      position: relative;
+      color: $orange;
+      top: em(-1.5);
+    }
+  }
+  b {
+    font: normal 900 112.5%/1 $heading;
+    margin: em(3,18) 0 0 em(4,18);
+    position: absolute;
+  }
+}
