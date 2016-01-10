@@ -142,6 +142,9 @@
     // Test if ServiceWorkers are supported
     serviceWorker : ("serviceWorker" in navigator),
 
+    // Test if fetch is supported
+    fetch : !!window.fetch,
+
     // Test if viewport units are supported
     viewportUnit : (function(el) {
       try {
