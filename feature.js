@@ -187,6 +187,9 @@
     // Tests if touch events are supported, but doesn't necessarily reflect a touchscreen device
     touch : !!(("ontouchstart" in window) || window.navigator && window.navigator.msPointerEnabled && window.MSGesture || window.DocumentTouch && document instanceof DocumentTouch),
 
+    // Test if ForceTouch might be supported
+    forceTouch : ("webkitmouseforcechanged" in window && "webkitForce" in (new MouseEvent("webkitmouseforcechanged"))),
+
     // Test if async attribute is supported
     async : ("async" in util.create("script")),
 

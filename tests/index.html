@@ -94,6 +94,9 @@
       <h4>Device Orientation</h4>
       <div class="test" id="orientation"></div>
 
+      <h4>Force Touch</h4>
+      <div class="test" id="force-touch"></div>
+
       <h4>Context Menu</h4>
       <p>Requires right click:</p>
       <div class="test" id="context" contextmenu="mymenu"></div>
@@ -166,6 +169,7 @@
       log(feature.webGL, "WebGL");
       log(feature.cors, "CORS");
       log(feature.touch, "Touch");
+      log(feature.forceTouch, "Force Touch");
 
       // 3D Transforms
       if (feature.css3Dtransform) {
@@ -258,6 +262,14 @@
           this.className += " active";
         },false);
         needsTouch.addEventListener("gesturestart", function() {
+          this.className += " active";
+        },false);
+      } catch(err) {}
+
+      // Force Touch
+      try {
+        var needsForceTouch = document.getElementById("force-touch");
+        needsForceTouch.addEventListener("webkitmouseforcechanged", function() {
           this.className += " active";
         },false);
       } catch(err) {}
