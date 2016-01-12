@@ -34,6 +34,9 @@
       <p>Requires click event:</p>
       <div class="test transition" style="-webkit-transition: all 1.5s ease; -moz-transition: all 1.5s ease; -ms-transition: all 1.5s ease; -o-transition: all 1.5s ease; transition: all 1.5s ease;"></div>
 
+      <h4>Web Animation</h4>
+      <div class="test" id="animation">Hello World</div>
+
       <h4>AddEventListener</h4>
       <div class="test" id="addeventlistener"></div>
 
@@ -143,6 +146,7 @@
       log(feature.cssTransform, "CSS transforms");
       log(feature.cssTransition, "CSS transitions");
       log(feature.contextMenu, "Context Menu");
+      log(feature.Animation, "Web Animation");
       log(feature.addEventListener, "AddEventListener");
       log(feature.querySelectorAll, "QuerySelectorAll");
       log(feature.matchMedia, "MatchMedia");
@@ -188,6 +192,23 @@
             this.className += " active";
           }, false);
         });
+      } catch(err) {}
+
+      // Web Animation
+      try {
+        var needsAnimation = document.getElementById("animation");
+        window.addEventListener("load", function(event) {
+          event.preventDefault();
+          needsAnimation.className += " active";
+          var animation = needsAnimation.animate([
+              {opacity: 0.5, transform: "scale(0.4)"},
+              {opacity: 1.0, transform: "scale(1)"}
+          ], {
+              direction: 'alternate',
+              duration: 500,
+              iterations: Infinity
+          });
+        }, false);
       } catch(err) {}
 
       // AddEventListener
