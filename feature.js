@@ -4,7 +4,7 @@
  *
  * http://featurejs.com
  *
- * CSS 3D Transform, CSS Transform, CSS Transition, Canvas, SVG,
+ * CSS 3D Transform, CSS Transform, CSS Transition, Canvas, SVG, Web Animation,
  * addEventListener, querySelectorAll, matchMedia, classList API,
  * placeholder, localStorage, History API, Viewport Units, REM Units,
  * CORS, WebGL, Service Worker, Context Menu, Geolocation,
@@ -99,6 +99,9 @@
       var test = util.pfx("transition") !== null;
       return !!test;
     })(),
+    
+    // Test if Animation is supported
+    animate : !!HTMLElement.prototype.animate,
 
     // Test if addEventListener is supported
     addEventListener : !!window.addEventListener,
