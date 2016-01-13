@@ -100,6 +100,12 @@
       return !!test;
     })(),
 
+    // Test if CSS filter are supported
+    cssFilter : (function() {
+      var test = util.pfx("filter") !== null;
+      return !!test;
+    })(),
+
     // Test if addEventListener is supported
     addEventListener : !!window.addEventListener,
 
