@@ -5,9 +5,9 @@
  * http://featurejs.com
  *
  * CSS 3D Transform, CSS Transform, CSS Transition, Canvas, SVG,
- * addEventListener, querySelectorAll, matchMedia, classList API,
- * placeholder, localStorage, History API, Viewport Units, REM Units,
- * CORS, WebGL, Service Worker, Context Menu, Geolocation,
+ * addEventListener, querySelectorAll, matchMedia, RTCPeerConnection,
+ * classList API, placeholder, localStorage, History API, Viewport Units,
+ * REM Units, CORS, WebGL, Service Worker, Context Menu, Geolocation,
  * Device Motion, Device Orientation, Touch, Async, Defer,
  * Srcset, Sizes & Picture Element.
  *
@@ -17,7 +17,7 @@
  *   console.log("webGL supported!");
  * }
  *
- * Author: @viljamis, https://viljamis.com
+ * Author: @viljamis, https://viljamis.com | @raulsi, http://raulsi.in
  */
 
 /* globals DocumentTouch */
@@ -100,6 +100,12 @@
       return !!test;
     })(),
 
+    // Test if CSS filter are supported
+    cssFilter : (function() {
+      var test = util.pfx("filter") !== null;
+      return !!test;
+    })(),
+
     // Test if addEventListener is supported
     addEventListener : !!window.addEventListener,
 
@@ -108,6 +114,19 @@
 
     // Test if matchMedia is supported
     matchMedia : !!window.matchMedia,
+
+    // Test if RTCPeerConnection is supported
+    RTCPeerConnection : (function(){
+      var servers = null;
+      try {
+        var RTCPeerConnection = window.RTCPeerConnection || window.mozRTCPeerConnection || window.webkitRTCPeerConnection;
+        var rtcpconn = new RTCPeerConnection(servers);
+        rtcpconn.close();
+        return true;
+      } catch (err) {
+        return false;
+      }
+    })(),
 
     // Test if Device Motion is supported
     deviceMotion : ("DeviceMotionEvent" in window),

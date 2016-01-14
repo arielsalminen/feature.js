@@ -80,6 +80,7 @@ feature.contextMenu
 feature.css3Dtransform
 feature.cssTransform
 feature.cssTransition
+feature.cssFilter
 feature.defer
 feature.deviceMotion
 feature.deviceOrientation
@@ -87,6 +88,7 @@ feature.geolocation
 feature.historyAPI
 feature.placeholder
 feature.localStorage
+feature.RTCPeerConnection
 feature.matchMedia
 feature.pictureElement
 feature.querySelectorAll
