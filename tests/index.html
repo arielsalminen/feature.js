@@ -48,6 +48,9 @@
       <h4>MatchMedia</h4>
       <div class="test" id="matchmedia"></div>
 
+      <h4>RTCPeerConnection</h4>
+      <div class="test" id="rtcpeerconnection"></div>
+
       <h4>ClassList API</h4>
       <div class="test" id="classlist"></div>
 
@@ -150,6 +153,7 @@
       log(feature.addEventListener, "AddEventListener");
       log(feature.querySelectorAll, "QuerySelectorAll");
       log(feature.matchMedia, "MatchMedia");
+      log(feature.RTCPeerConnection, "RTCPeerConnection");
       log(feature.async, "Async attribute");
       log(feature.defer, "Defer attribute");
       log(feature.deviceMotion, "DeviceMotion");
@@ -223,6 +227,14 @@
         if (window.matchMedia("(min-width: 1px)").matches) {
           needsMatchMedia.className += " active";
         }
+      } catch(err) {}
+
+      // RTCPeerConnection
+      try {
+        var needsRTCPeerConnection = document.getElementById("rtcpeerconnection");
+          if(feature.RTCPeerConnection){
+            needsRTCPeerConnection.className += " active";
+          }
       } catch(err) {}
 
       // ClassList API
