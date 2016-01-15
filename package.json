@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/viljamis/feature.js.git"
   },
-  "author": "",
+  "author": "Viljami Salminen",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/viljamis/feature.js/issues"
