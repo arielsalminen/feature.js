@@ -181,6 +181,8 @@
       }
     })(util.create("canvas")),
 
+    webAudio: !!window.AudioContext || !!window.webkitAudioContext || !!mozAudioContext,
+
     // Test if cors is supported
     cors : ("XMLHttpRequest" in window && "withCredentials" in new XMLHttpRequest()),
 
