@@ -205,6 +205,18 @@
     // Test if Picture element is supported
     pictureElement : ("HTMLPictureElement" in window),
 
+    // Test if fullscreen is supported
+    fullscreen : (function(el) {
+      var test = ["requestFullscreen", "webkitRequestFullscreen", 
+        "webkitRequestFullScreen" , "mozRequestFullScreen", "msRequestFullscreen"];
+        for (var prop in test) {
+          if (el[test[prop]]) {
+            return true;
+          }
+        }
+        return false;
+    })(util.create("video")),
+
     // Run all the tests and add supported classes
     testAll : function() {
       var classes = " js";

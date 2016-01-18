@@ -89,6 +89,7 @@ feature.placeholder
 feature.localStorage
 feature.matchMedia
 feature.pictureElement
+feature.fullscreen
 feature.querySelectorAll
 feature.remUnit
 feature.serviceWorker

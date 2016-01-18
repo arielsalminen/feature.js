@@ -101,6 +101,8 @@
         <menuitem label="FEATURE.JS TEST MENU ITEM" onclick="window.location.reload();"></menuitem>
       </menu>
 
+      <h4>Fullscreen</h4>
+      <div class="test" id="fullscreen"></div>
 
     </div>
     <script>
@@ -166,6 +168,7 @@
       log(feature.webGL, "WebGL");
       log(feature.cors, "CORS");
       log(feature.touch, "Touch");
+      log(feature.fullscreen, "Fullscreen");
 
       // 3D Transforms
       if (feature.css3Dtransform) {
@@ -353,6 +356,12 @@
       if (feature.contextMenu) {
         var needsContextMenu = document.getElementById("context");
         needsContextMenu.className += " active";
+      }
+
+      // Fullscreen
+      if(feature.fullscreen) {
+        var needsFullscreen = document.getElementById("fullscreen");
+        needsFullscreen.className += " active";
       }
 
     </script>
