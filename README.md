@@ -80,6 +80,7 @@ feature.contextMenu
 feature.css3Dtransform
 feature.cssTransform
 feature.cssTransition
+feature.cssFlexbox
 feature.defer
 feature.deviceMotion
 feature.deviceOrientation
