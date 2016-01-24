@@ -205,6 +205,9 @@
     // Test if Picture element is supported
     pictureElement : ("HTMLPictureElement" in window),
 
+    // Test if Promises are supported
+    promise : (typeof window.Promise === "function" && "all" in window.Promise && "race" in window.Promise && "reject" in window.Promise && "resolve" in window.Promise),
+
     // Run all the tests and add supported classes
     testAll : function() {
       var classes = " js";
