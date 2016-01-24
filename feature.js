@@ -199,6 +199,10 @@
     // Test if img srcset attribute is supported
     srcset : ("srcset" in util.create("img")),
 
+    // Test if notifications are supported
+    notification : "Notification" in window && (window.Notification.permission === "granted" ||
+        typeof window.Notification.requestPermission === "function"),
+
     // Test if img sizes attribute is supported
     sizes : ("sizes" in util.create("img")),
 

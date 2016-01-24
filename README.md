@@ -88,6 +88,7 @@ feature.historyAPI
 feature.placeholder
 feature.localStorage
 feature.matchMedia
+feature.notification
 feature.pictureElement
 feature.querySelectorAll
 feature.remUnit

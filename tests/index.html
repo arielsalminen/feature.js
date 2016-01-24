@@ -79,6 +79,9 @@
       <h4>Srcset</h4>
       <img class="test" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAD/AAAAACwAAAAAAQABAAACAkQBADs=" alt="">
 
+      <h4>Notification</h4>
+      <div class="test" id="notification"></div>
+
       <h4>Picture element</h4>
       <picture>
         <source media="(min-width: 1px)" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAD/AAAAACwAAAAAAQABAAACAkQBADs=">
@@ -160,6 +163,7 @@
       log(feature.geolocation, "Geolocation");
       log(feature.srcset, "Srcset attribute");
       log(feature.sizes, "Sizes attribute");
+      log(feature.notification, "Notification");
       log(feature.pictureElement, "Picture element");
       log(feature.canvas, "Canvas");
       log(feature.svg, "SVG");
@@ -355,6 +359,11 @@
         needsContextMenu.className += " active";
       }
 
+      // Notification
+      if (feature.notification) {
+        var needsNotification = document.getElementById("notification");
+        needsNotification.className += " active";
+      }
     </script>
   </body>
 </html>
