@@ -204,6 +204,14 @@
 
     // Test if Picture element is supported
     pictureElement : ("HTMLPictureElement" in window),
+    
+    // Test if certain of the common navigator plugins is supported
+    plugins : {
+        widevine_module : ("Widevine Content Decryption Module" in navigator.plugins),
+        shockwave_flash : ("Shockwave Flash" in navigator.plugins),
+        chrome_pdf_viewer : ("Chrome PDF Viewer" in navigator.plugins),
+        native_client : ("Native Client" in navigator.plugins)
+    },
 
     // Run all the tests and add supported classes
     testAll : function() {

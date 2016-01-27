@@ -100,7 +100,22 @@
       <menu type="context" id="mymenu">
         <menuitem label="FEATURE.JS TEST MENU ITEM" onclick="window.location.reload();"></menuitem>
       </menu>
-
+      
+      <h4>Widevine Content Decryption Module</h4>
+      <p>Requires a click on the link (Netflix is a DRM-protected media stream and uses the plugin):</p>
+      <a href="http://netflix.com" target="_BLANK">Netflix</a>
+      
+      <h4>Chrome PDF Viewer</h4>
+      <p>Requires a click on the link:</p>
+      <a href="sample.pdf" target="_BLANK">Sample PDF</a>
+      
+      <h4>Shockwave Flash</h4>
+      <p>Requires a click on the link and choosing a flash stream:</p>
+      <a href="http://www.flash-test.net/" target="_BLANK">Flash Test Service</a>
+      
+      <h4>Native client</h4>
+      <p>Requires installation of Google's Bastion game (ported to Chrome via Native Client):</p>
+      <a href="https://chrome.google.com/webstore/detail/the-bastion/bhipfeghdmmgbhllhpdkiikfnjnoimfk" target="_BLANK">Bastion</a>
 
     </div>
     <script>
@@ -166,6 +181,10 @@
       log(feature.webGL, "WebGL");
       log(feature.cors, "CORS");
       log(feature.touch, "Touch");
+      log(feature.plugins.widevine_module, "Widevine Content Decryption Module");
+      log(feature.plugins.shockwave_flash, "Shockwave Flash");
+      log(feature.plugins.chrome_pdf_viewer, "Chrome PDF Viewer");
+      log(feature.plugins.native_client, "Native Client");
 
       // 3D Transforms
       if (feature.css3Dtransform) {

@@ -98,6 +98,10 @@ feature.svg
 feature.touch
 feature.viewportUnit
 feature.webGL
+feature.plugins.widevine_module
+feature.plugins.shockwave_flash
+feature.plugins.chrome_pdf_viewer
+feature.plugins.native_client
 ```
 
 ## Live demo
