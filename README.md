@@ -107,13 +107,13 @@ feature.webGL
 
 ## Working on the project
 
-Local development requires both Node and Gulp. You can install Node by visiting [nodejs.org](http://nodejs.org) and following the website’s instructions. If you have Node.js already installed, you can proceed with the instructions below:
+Local development requires both Node and Gulp. You can install Node by visiting [nodejs.org](http://nodejs.org) and following the website’s instructions. If you have Node.js already installed, you can proceed by installing npm and its dependencies:
 
 ```shell
-$ npm install gulp -g
+$ npm install
 
 // If you’re getting an error about permissions you might have to use sudo:
-$ sudo npm install gulp -g
+$ sudo npm install
 ```
 
 To build feature.min.js run the following command:
