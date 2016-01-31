@@ -187,6 +187,6 @@ SOFTWARE.
 
 ## Changelog
 
-`1.0.1` (2016-01-31) - Code optimization, guld build task, npm support.
+`1.0.1` (2016-01-31) - Code optimization, gulp build task, npm support.
 
 `1.0.0` (2016-01-09) - Initial release.
