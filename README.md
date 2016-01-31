@@ -105,6 +105,24 @@ feature.webGL
 * Official site with live tests: [http://featurejs.com](http://featurejs.com)
 * Test with actual features: [http://featurejs.com/test](http://featurejs.com/test)
 
+## Working on the project
+
+Local development requires both Node and Gulp. You can install Node by visiting [nodejs.org](http://nodejs.org) and following the website’s instructions. If you have Node.js already installed, you can proceed with the instructions below:
+
+```shell
+$ npm install gulp -g
+
+// If you’re getting an error about permissions you might have to use sudo:
+$ sudo npm install gulp -g
+```
+
+To build feature.min.js run the following command:
+
+```shell
+$ gulp build
+```
+
+
 ## Tested on the following platforms
 
 * iOS 3.0+
