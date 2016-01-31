@@ -105,6 +105,24 @@ feature.webGL
 * Official site with live tests: [http://featurejs.com](http://featurejs.com)
 * Test with actual features: [http://featurejs.com/test](http://featurejs.com/test)
 
+## Tested on the following platforms
+
+* iOS 3.0+
+* Android 1.6+
+* Windows Phone 7.0+
+* Blackberry 3.0+
+* Blackberry Tablet 1.0+
+* Jolla 1.0+
+* Kindle 3.3+
+* Maemo 5.0+
+* Meego 1.2+
+* Symbian 3
+* Symbian Belle
+* Symbian S40 Asha
+* webOS 2.0+
+* Windows XP+ (IE6 and up)
+* Mac OS X
+
 ## License
 
 The MIT License (MIT)
