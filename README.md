@@ -4,6 +4,8 @@ Feature.js is a fast, simple and lightweight browser feature detection library. 
 
 With [Feature.js](http://featurejs.com/), it’s simple to build progressively enhanced experiences that use feature detection to determine if a code can be executed in the user’s browser.
 
+
+
 ## How to use
 
 First, include the script somewhere on your page — usually either in the ```<head>``` or just before the  ```</body>``` closing tag. No need to initialize or do anything else really, all the feature tests are now available for usage:
@@ -66,6 +68,8 @@ There are few gotchas related to browser feature detection in general and these 
 
 **PLACEHOLDERS:** Feature.js gives false negative for iOS 3 Safari, but since this OS has basically no users, it’s not considered an issue at the moment.
 
+
+
 ## API reference
 
 Below you’ll find a list of all the available browser feature tests and how to call them.
@@ -100,10 +104,21 @@ feature.viewportUnit
 feature.webGL
 ```
 
+
+
 ## Live demo
 
 * Official site with live tests: [http://featurejs.com](http://featurejs.com)
 * Test with actual features: [http://featurejs.com/test](http://featurejs.com/test)
+
+
+
+## Download
+
+* [Download the latest release](https://github.com/viljamis/feature.js/archive/master.zip)
+* Install by running `npm install feature.js`
+
+
 
 ## Working on the project
 
@@ -123,6 +138,7 @@ $ gulp build
 ```
 
 
+
 ## Tested on the following platforms
 
 * iOS 3.0+
@@ -140,6 +156,8 @@ $ gulp build
 * webOS 2.0+
 * Windows XP+ (IE6 and up)
 * Mac OS X
+
+
 
 ## License
 
@@ -165,6 +183,9 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+
+
 ## Changelog
 
+`1.0.1` (2016-01-31) - Code optimization, guld build task, npm support.
 `1.0.0` (2016-01-09) - Initial release.
