@@ -74,14 +74,9 @@
 
   /**
    * The Feature.js object
-   *
-   * @constructor
    */
-  function Feature() {}
 
-  Feature.prototype = {
-    constructor : Feature,
-
+  var Feature = {
     // Test if CSS 3D transforms are supported
     css3Dtransform : (function() {
       var test = (!util.old && util.pfx("perspective") !== null);
@@ -221,10 +216,6 @@
   /**
    * Expose a public-facing API
    */
-  function expose() {
-    var ftr = new Feature();
-    return ftr;
-  }
-  window.feature = expose();
+  window.feature = Feature;
 
 }(window, document));
