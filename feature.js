@@ -1,5 +1,5 @@
 /*!
- * FEATURE.JS 1.0.0, A Fast, simple and lightweight browser feature
+ * FEATURE.JS 1.0.1, A Fast, simple and lightweight browser feature
  * detection library in just 1kb.
  *
  * http://featurejs.com
