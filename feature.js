@@ -200,7 +200,7 @@
     // Test if Picture element is supported
     pictureElement : ("HTMLPictureElement" in window),
 
-    // Run all the tests and add supported classes
+    // Run all the tests and add supported and unsupported classes
     testAll : function() {
       var classes = " js", fail = "no-";
       for (var test in this) {
