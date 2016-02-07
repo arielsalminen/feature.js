@@ -202,10 +202,10 @@
 
     // Run all the tests and add supported classes
     testAll : function() {
-      var classes = " js";
+      var classes = " js", fail = "no-";
       for (var test in this) {
-        if (test !== "testAll" && test !== "constructor" && this[test]) {
-          classes += " " + test;
+        if (test !== "testAll") {
+          classes += (test !== "constructor" && this[test]) ? " " + test : " " + fail + test;
         }
       }
       docEl.className += classes.toLowerCase();
