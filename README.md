@@ -47,8 +47,7 @@ When you want to target JavaScript only towards browsers that support the featur
 ```javascript
 (function() {
   if (!feature.webGL || !feature.svg) {
-    console.log("Stopping… WebGL or SVG isn’t supported");
-    return;
+    throw new Error("WebGL or SVG isn’t supported");
   }
   console.log("Browser supports both WebGL & SVG");
 })();
