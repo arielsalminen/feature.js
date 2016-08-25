@@ -82,8 +82,7 @@
         <p>When you want to target JavaScript only towards browsers that support the features you need, you can check inside a function if the tests return false and stop further execution:</p>
         <pre class="prettyprint lang-js"><code>(function() {
   if (!feature.webGL || !feature.svg) {
-    console.log("Stopping… WebGL or SVG isn’t supported");
-    return;
+    throw new Error("WebGL or SVG isn’t supported");
   }
   console.log("Browser supports both WebGL &amp; SVG");
 })();</code></pre>
