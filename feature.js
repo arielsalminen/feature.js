@@ -79,20 +79,32 @@
   var Feature = {
     // Test if CSS 3D transforms are supported
     css3Dtransform : (function() {
-      var test = (!util.old && util.pfx("perspective") !== null);
-      return !!test;
+      var test = !!(!util.old && util.pfx("perspective") !== null);
+      var prop = util.pfx("transform");
+      return {
+        support: test,
+        property: test ? prop : null
+      };
     })(),
 
     // Test if CSS transforms are supported
     cssTransform : (function() {
-      var test = (!util.old && util.pfx("transformOrigin") !== null);
-      return !!test;
+      var test = !!(!util.old && util.pfx("transformOrigin") !== null);
+      var prop = util.pfx("transform");
+      return {
+        support: test,
+        property: test ? prop : null
+      };
     })(),
 
     // Test if CSS transitions are supported
     cssTransition : (function() {
-      var test = util.pfx("transition") !== null;
-      return !!test;
+      var prop = util.pfx("transition");
+      var test = !!(prop !== null);
+      return {
+        support: test,
+        property: test ? prop : null
+      };
     })(),
 
     // Test if addEventListener is supported
