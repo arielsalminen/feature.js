@@ -199,6 +199,9 @@
 
     // Test if Picture element is supported
     pictureElement : ("HTMLPictureElement" in window),
+    
+    // Test if Fetch API is supported
+    fetch : ("fetch" in window),
 
     // Run all the tests and add supported classes
     testAll : function() {
