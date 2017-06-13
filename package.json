@@ -1,8 +1,8 @@
 {
-  "name": "feature.js",
-  "version": "1.0.1",
+  "name": "feature-js",
+  "version": "0.0.1",
   "description": "Feature.js is a fast, simple and lightweight browser feature detection library in 1kb.",
-  "main": "feature.js",
+  "main": "feature.min.js",
   "directories": {
     "test": "tests"
   },
