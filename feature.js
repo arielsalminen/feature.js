@@ -219,3 +219,5 @@
   window.feature = Feature;
 
 }(window, document));
+
+module.exports = window.feature;

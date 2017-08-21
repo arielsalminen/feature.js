@@ -6,13 +6,13 @@ var insert = require('gulp-insert');
 
 var pjson = require('./package.json');
 
-gulp.task('build', function () {
+gulp.task('default', function () {
   return gulp.src(['./feature.js'])
   
     .pipe(jshint())
     .pipe(jshint.reporter('default'))
-    .pipe(uglify('feature.min.js'))
-    .pipe(insert.prepend('/*! FEATURE.JS ' + pjson.version + ', http://featurejs.com */\n'))
+    .pipe(uglify({}))
+    .pipe(insert.prepend('/*! FeatureJS ' + pjson.version + ', (thanks to http://featurejs.com) */\n'))
     .pipe(rename({extname: '.min.js'}))
     .pipe(gulp.dest('./'));
 });
