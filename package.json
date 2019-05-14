@@ -7,7 +7,9 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint feature.js",
+    "build": "gulp build"
   },
   "repository": {
     "type": "git",
@@ -20,11 +22,12 @@
   },
   "homepage": "https://github.com/viljamis/feature.js#readme",
   "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-google": "^0.13.0",
     "gulp": "^3.9.0",
+    "gulp-eslint": "^5.0.0",
     "gulp-insert": "^0.5.0",
-    "gulp-jshint": "^2.0.0",
     "gulp-rename": "^1.2.2",
-    "gulp-uglify": "^1.5.1",
-    "jshint": "^2.9.1"
+    "gulp-uglify": "^1.5.1"
   }
 }

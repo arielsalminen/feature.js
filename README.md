@@ -119,7 +119,7 @@ feature.webGL
 
 
 
-## Working on the project
+## Contributing
 
 Local development requires both Node and Gulp. You can install Node by visiting [nodejs.org](http://nodejs.org) and following the website’s instructions. If you have Node.js already installed, you can proceed by installing npm and its dependencies:
 
@@ -130,10 +130,16 @@ $ npm install
 $ sudo npm install
 ```
 
-To build feature.min.js run the following command:
+To build the `feature.min.js` file run the following command:
 
 ```shell
-$ gulp build
+$ npm run build
+```
+
+The build script will automatically lint the file and fail the build if any linting offenses were found. To run the linter outside of the build step, run the following command:
+
+```shell
+$ npm run lint
 ```
 
 
