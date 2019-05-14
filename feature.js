@@ -21,7 +21,15 @@
  */
 
 /* globals DocumentTouch */
-;(function (window, document, undefined) {
+;(function (root, document, factory) {
+  if (typeof define === 'function' && define.amd) {
+    // AMD. Register as an anonymous module.
+    define([], factory);
+  } else {
+    // Browser globals (root is window)
+    root.feature = factory();
+  }
+}(typeof self !== 'undefined' ? self : this, document, function () {
   "use strict";
 
   // For minification only
@@ -216,6 +224,6 @@
   /**
    * Expose a public-facing API
    */
-  window.feature = Feature;
+  return Feature;
 
-}(window, document));
+}));
