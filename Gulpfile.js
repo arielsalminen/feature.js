@@ -11,7 +11,7 @@ gulp.task('build', function () {
     .pipe(eslint())
     .pipe(eslint.format())
     .pipe(eslint.failAfterError())
-    .pipe(uglify('feature.min.js'))
+    .pipe(uglify())
     .pipe(insert.prepend('/*! FEATURE.JS ' + pjson.version + ', http://featurejs.com */\n'))
     .pipe(rename({extname: '.min.js'}))
     .pipe(gulp.dest('./'));
