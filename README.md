@@ -136,7 +136,11 @@ To build feature.min.js run the following command:
 $ gulp build
 ```
 
+To run the tests, which are also run during the build task, use:
 
+```shell
+$ npm run test
+```
 
 ## Tested on the following platforms
 
