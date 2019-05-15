@@ -71,6 +71,8 @@ There are few gotchas related to browser feature detection in general and these 
 
 ## API reference
 
+### Tests
+
 Below you’ll find a list of all the available browser feature tests and how to call them.
 
 ```javascript
@@ -103,6 +105,63 @@ feature.viewportUnit
 feature.webGL
 ```
 
+### CSS Feature Hooks
+
+By running:
+
+```javascript
+feature.testAll()
+```
+
+each aforementioned test will be run and its result will be added to the class names on the root `html` element on the page:
+
+```html
+<html class=" js css3dtransform csstransform csstransition addeventlistener queryselectorall matchmedia devicemotion deviceorientation contextmenu classlist placeholder localstorage historyapi viewportunit remunit canvas svg webgl cors async defer geolocation srcset sizes pictureelement" lang="en">
+```
+
+### Extending
+
+You can also extend the library through:
+
+```javascript
+feature.extend(NAME, CALLBACK);
+```
+
+This way you can add your own tests to the library, the result of which will also be integrated with the `testAll()` method. Here's a contrived example:
+
+```html
+<script src="path/to/feature.js"></script>
+
+<script>
+  feature.extend('foo', function () {
+    return true;
+  });
+
+  feature.testAll();
+</script>
+```
+
+This would add the `foo` class name to the `html` document element as well.
+
+Use this to write your own tests, customize existing tests, or as a stop-gap measure to fix a bug in a test between releases of the library. Please share the love, if you find yourself in the latter example, by [submitting an issue](https://github.com/viljamis/feature.js/issues) for us to fix in an upcoming release.
+
+#### Utilities
+
+`feature.extend` will graciously expose the utility methods to your callback. These utilities are used internally within the library and will help unify your added tests:
+
+```javascript
+feature.extend('foo', function (util) {
+  // Simple create element method
+  util.create('image'); // returns HTMLElement
+
+  // Test if it's an old device that we want to filter out
+  util.old; // returns Boolean
+
+  // Function that takes a standard CSS property name as a parameter and returns
+  // its prefixed version valid for the current browser it runs in
+  util.pfx('transition'); // Returns falsey if unsupported, truthy if supported
+});
+```
 
 
 ## Live demo

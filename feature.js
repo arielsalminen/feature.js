@@ -212,11 +212,20 @@
     testAll : function() {
       var classes = " js";
       for (var test in this) {
-        if (test !== "testAll" && this[test]) {
+        if (test !== "testAll" && test !== 'extend' && this[test]) {
           classes += " " + test;
         }
       }
       docEl.className += classes.toLowerCase();
+    },
+
+    extend : function(name, callback) {
+      if (typeof callback !== 'function') {
+        throw new TypeError('Feature.extend: `callback` is not a Function');
+      }
+
+      this[name] = !!callback(util);
+      return this;
     }
 
   };
