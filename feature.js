@@ -212,7 +212,7 @@
     testAll : function() {
       var classes = " js";
       for (var test in this) {
-        if (test !== "testAll" && test !== "constructor" && this[test]) {
+        if (test !== "testAll" && this[test]) {
           classes += " " + test;
         }
       }
