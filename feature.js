@@ -43,7 +43,7 @@
     /**
      * Test if it's an old device that we want to filter out
      */
-    old : !!(/(Android\s(1.|2.))|(Silk\/1.)/i.test(navigator.userAgent)),
+    old : !!(/(Android\s(1\.|2\.))|(Silk\/1\.)/i.test(navigator.userAgent)),
 
     /**
      * Function that takes a standard CSS property name as a parameter and
