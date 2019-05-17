@@ -121,7 +121,7 @@
 
     // Test if localStorage is supported
     localStorage : (function() {
-      var test = "x";
+      var test = "featurejs-test";
       try {
         localStorage.setItem(test, test);
         localStorage.removeItem(test);
