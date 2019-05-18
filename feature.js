@@ -44,7 +44,7 @@
     /**
      * Test if it's an old device that we want to filter out
      */
-    old: !!(/(Android\s(1.|2.))|(Silk\/1.)/i.test(navigator.userAgent)),
+    old: !!(/(Android\s(1\.|2\.))|(Silk\/1\.)/i.test(navigator.userAgent)),
 
     /**
      * Function that takes a standard CSS property name as a parameter and
@@ -126,8 +126,7 @@
 
     // Test if localStorage is supported
     localStorage: (function() {
-      var test = 'x';
-
+      var test = 'featurejs-test';
       try {
         localStorage.setItem(test, test);
         localStorage.removeItem(test);
