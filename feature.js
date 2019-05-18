@@ -126,11 +126,18 @@
 
     // Test if localStorage is supported
     localStorage: (function() {
-      var test = 'featurejs-test';
+      var test;
+
+      if ('localStorage' in window === false) {
+        return false;
+      }
+
       try {
-        localStorage.setItem(test, test);
-        localStorage.removeItem(test);
-        return true;
+        window.localStorage.setItem('featurejs-test', 'foobar');
+        test = window.localStorage.getItem('featurejs-test');
+        window.localStorage.removeItem('featurejs-test');
+
+        return !!test;
       } catch (err) {
         return false;
       }
