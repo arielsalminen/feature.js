@@ -22,7 +22,15 @@
 
 /* globals DocumentTouch */
 /* eslint no-extra-semi: 0 */
-;(function(window, document, undefined) {
+;(function(root, document, factory) {
+  if (typeof define === 'function' && define.amd) {
+    // AMD. Register as an anonymous module.
+    define([], factory);
+  } else {
+    // Browser globals (root is window)
+    root.feature = factory();
+  }
+}(typeof self !== 'undefined' ? self : this, document, function() {
   'use strict';
 
   // For minification only
@@ -218,7 +226,7 @@
       var classes = ' js';
 
       for (var test in this) {
-        if (test !== 'testAll' && test !== 'constructor' && this[test]) {
+        if (test !== 'testAll' && test !== 'extend' && this[test]) {
           classes += ' ' + test;
         }
       }
@@ -226,10 +234,19 @@
       docEl.className += classes.toLowerCase();
     },
 
+    extend: function(name, callback) {
+      if (typeof callback !== 'function') {
+        throw new TypeError('Feature.extend: `callback` is not a Function');
+      }
+
+      this[name] = !!callback(util);
+      return this;
+    },
+
   };
 
   /**
    * Expose a public-facing API
    */
-  window.feature = Feature;
-}(window, document));
+  return Feature;
+}));
