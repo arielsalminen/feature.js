@@ -4,10 +4,15 @@ var rename = require('gulp-rename');
 var insert = require('gulp-insert');
 var eslint = require('gulp-eslint');
 var size   = require('gulp-size');
+var jest   = require('gulp-jest').default;
 
 var pjson = require('./package.json');
 
-gulp.task('build', function () {
+gulp.task('test', function () {
+    return gulp.src('./').pipe(jest());
+});
+
+gulp.task('build', ['test'], function () {
   return gulp.src(['./feature.js'])
     .pipe(eslint())
     .pipe(eslint.format())
