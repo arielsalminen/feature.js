@@ -207,6 +207,12 @@ To run the tests, which are also run during the build task, use:
 $ npm run test
 ```
 
+## Changelog
+
+View the full changelog [CHANGELOG.md](here).
+
+
+
 ## Tested on the following platforms
 
 * iOS 3.0+
@@ -250,11 +256,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
-
-
-## Changelog
-
-`1.0.1` (2016-01-31) - Code optimization, gulp build task, npm support.
-
-`1.0.0` (2016-01-09) - Initial release.
