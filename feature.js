@@ -36,6 +36,9 @@
   // For minification only
   var docEl = document.documentElement;
 
+  // Protect against undefined window.navigator objects
+  var nav = window.navigator || {};
+
 
   /**
    * Utilities
@@ -52,7 +55,7 @@
     /**
      * Test if it's an old device that we want to filter out
      */
-    old: !!(/(Android\s(1\.|2\.))|(Silk\/1\.)/i.test(navigator.userAgent)),
+    old: !!(/(Android\s(1\.|2\.))|(Silk\/1\.)/i.test(nav.userAgent)),
 
     /**
      * Function that takes a standard CSS property name as a parameter and
@@ -155,7 +158,7 @@
     historyAPI: (window.history && 'pushState' in window.history),
 
     // Test if ServiceWorkers are supported
-    serviceWorker: ('serviceWorker' in navigator),
+    serviceWorker: ('serviceWorker' in nav),
 
     // Test if viewport units are supported
     viewportUnit: (function(el) {
@@ -204,8 +207,7 @@
     // Tests if touch events are supported, but doesn't necessarily reflect a
     // touchscreen device
     touch: !!(('ontouchstart' in window) ||
-      window.navigator &&
-      window.navigator.msPointerEnabled &&
+      nav.msPointerEnabled &&
       window.MSGesture ||
       window.DocumentTouch &&
       document instanceof DocumentTouch),
@@ -217,7 +219,7 @@
     defer: ('defer' in util.create('script')),
 
     // Test if Geolocation is supported
-    geolocation: ('geolocation' in navigator),
+    geolocation: ('geolocation' in nav),
 
     // Test if img srcset attribute is supported
     srcset: ('srcset' in util.create('img')),
