@@ -139,19 +139,19 @@
     localStorage: (function() {
       var test;
 
-      if ('localStorage' in window === false) {
-        return false;
+      if ('localStorage' in window) {
+        try {
+          window.localStorage.setItem('featurejs-test', 'foobar');
+          test = window.localStorage.getItem('featurejs-test');
+          window.localStorage.removeItem('featurejs-test');
+        } catch (err) {
+          // no content in the cache means it couldn't be added to at all (old
+          // Safari) otherwise we just went over a non-zero quota
+          return !!window.localStorage.length;
+        }
       }
 
-      try {
-        window.localStorage.setItem('featurejs-test', 'foobar');
-        test = window.localStorage.getItem('featurejs-test');
-        window.localStorage.removeItem('featurejs-test');
-
-        return !!test;
-      } catch (err) {
-        return false;
-      }
+      return !!test;
     })(),
 
     // Test if History API is supported
