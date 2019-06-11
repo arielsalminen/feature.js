@@ -32,7 +32,7 @@
     <script src="/js/all.min.js"></script>
   </head>
   <body onload="prettyPrint()">
-    <div class="notice" title="Dismiss?"><p>Feature.js 1.0.1 is released!</p> <img src="/img/close.svg" alt="Dismiss" onerror="this.onerror=null;this.src='/img/close.png'"></div>
+    <div class="notice" title="Dismiss?"><p>Feature.js 1.1.0 is released!</p> <img src="/img/close.svg" alt="Dismiss" onerror="this.onerror=null;this.src='/img/close.png'"></div>
     <header id="top">
       <nav>
         <ul>
@@ -122,6 +122,29 @@ feature.touch
 feature.viewportUnit
 feature.webGL</code></pre>
         <pre class="prettyprint lang-js"><code>feature.testAll();</code></pre>
+        <h3 id="extending">Extending</h3>
+        <p>Feature.js allows you to extend the library with your own tests or customize the existing tests by using the provided <code>extend</code> method:</p>
+        <pre class="prettyprint lang-js"><code>feature.extend(NAME, CALLBACK);</code></pre>
+        <p>This way you can add your own tests to the library, the result of which will also be integrated with the <code>testAll()</code> method. A&nbsp;simplified example looks like this:</p>
+        <pre class="prettyprint lang-js"><code>feature.extend("foo", function() {
+  return true;
+});
+
+feature.testAll();</code></pre>
+        <p>The above example would add the <code>foo</code> class to the <code>html</code> element as well.</p>
+        <h3 id="utilities">Utilities</h3>
+        <p><code>feature.extend</code> graciously exposes the utility methods to your callback. These utilities are used internally within the library and will help unify your added tests:</p>
+        <pre class="prettyprint lang-js"><code>feature.extend("foo", function(util) {
+  // Simple create element method
+  util.create("image"); // returns HTMLElement
+
+  // Test if it’s an old device we want to filter out
+  util.old; // returns Boolean
+
+  // Takes standard CSS property as a parameter and returns
+  // its prefixed version valid for the current browser
+  util.pfx("transition"); // returns Boolean
+});</code></pre>
         <p class="center" id="download">
           <a href="https://github.com/viljamis/feature.js/archive/master.zip" class="btn hover"><b>Download</b> <i>(v1.0.1)</i></a><br>or <br><a href="https://github.com/viljamis/feature.js" rel="external" class="btn-alt"><em>View&nbsp;Source&nbsp;on&nbsp;GitHub</em></a>
         </p>
@@ -129,7 +152,7 @@ feature.webGL</code></pre>
     </article>
     <footer>
       <div class="wrapper">
-        &copy; 2016 Feature.js. All&nbsp;rights&nbsp;reserved.
+        &copy; 2019 Feature.js. All&nbsp;rights&nbsp;reserved.
         <a href="#top" data-scroll>Back to top</a>
       </div>
     </footer>
