@@ -1,3 +1,8 @@
+# v1.1.2 (2021-06-15)
+
+- Adds test for “Fetch API”.
+- Updates dependencies.
+
 # v1.1.1 (2019-11-19)
 
 - Fixes “Access is denied for this document” bug.
