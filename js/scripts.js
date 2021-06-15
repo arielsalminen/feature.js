@@ -146,6 +146,7 @@
       this.logger(feature.defer, "Defer attribute");
       this.logger(feature.deviceOrientation, "DeviceOrientation");
       this.logger(feature.deviceMotion, "DeviceMotion");
+      this.logger(feature.fetch, "Fetch");
       this.logger(feature.geolocation, "Geolocation");
       this.logger(feature.historyAPI, "History API");
       this.logger(feature.placeholder, "Input Placeholder");
@@ -178,6 +179,7 @@
           feature.css3Dtransform && feature.cssTransform &&
           feature.cssTransition && feature.defer &&
           feature.deviceOrientation && feature.deviceMotion &&
+          feature.fetch &&
           feature.geolocation && feature.historyAPI &&
           feature.placeholder && feature.localStorage &&
           feature.matchMedia && feature.pictureElement &&
