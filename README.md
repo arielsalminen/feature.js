@@ -88,6 +88,7 @@ feature.cssTransition
 feature.defer
 feature.deviceMotion
 feature.deviceOrientation
+feature.fetchAPI
 feature.geolocation
 feature.historyAPI
 feature.placeholder
