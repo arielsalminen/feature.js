@@ -1,4 +1,4 @@
-# v1.1.2 (2021-06-15)
+# v1.1.3 (2021-06-15)
 
 - Adds test for “Fetch”.
 - Updates dependencies.
