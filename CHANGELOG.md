@@ -1,6 +1,6 @@
 # v1.1.2 (2021-06-15)
 
-- Adds test for “Fetch API”.
+- Adds test for “Fetch”.
 - Updates dependencies.
 
 # v1.1.1 (2019-11-19)

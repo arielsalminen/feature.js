@@ -9,7 +9,7 @@
  * placeholder, localStorage, History API, Viewport Units, REM Units,
  * CORS, WebGL, Service Worker, Context Menu, Geolocation,
  * Device Motion, Device Orientation, Touch, Async, Defer,
- * Srcset, Sizes, Picture Element & Fetch API.
+ * Srcset, Sizes, Picture Element & Fetch.
  *
  *
  * USAGE EXAMPLE:
@@ -224,8 +224,8 @@
     // Test if Picture element is supported
     pictureElement: ('HTMLPictureElement' in window),
 
-    // Test if Picture element is supported
-    fetchAPI: ('fetch' in window),
+    // Test if Fetch is supported
+    fetch: ('fetch' in window),
 
     // Run all the tests and add supported classes
     testAll: function() {
