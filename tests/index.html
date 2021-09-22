@@ -34,6 +34,9 @@
       <p>Requires click event:</p>
       <div class="test transition" style="-webkit-transition: all 1.5s ease; -moz-transition: all 1.5s ease; -ms-transition: all 1.5s ease; -o-transition: all 1.5s ease; transition: all 1.5s ease;"></div>
 
+      <h4>CSS Flexbox</h4>
+      <div class="test" id="flexbox"></div>
+
       <h4>AddEventListener</h4>
       <div class="test" id="addeventlistener"></div>
 
@@ -142,6 +145,7 @@
       log(feature.css3Dtransform, "CSS 3D transforms");
       log(feature.cssTransform, "CSS transforms");
       log(feature.cssTransition, "CSS transitions");
+      log(feature.cssFlexbox, "CSS Flexbox");
       log(feature.contextMenu, "Context Menu");
       log(feature.addEventListener, "AddEventListener");
       log(feature.querySelectorAll, "QuerySelectorAll");
@@ -189,6 +193,13 @@
             this.className += " active";
           }, false);
         });
+      } catch(err) {}
+      
+      // Flexbox
+      try {
+        var needsFlexbox = document.getElementById("flexbox");
+        needsFlexbox.style.flexBasis = "auto";
+        needsFlexbox.className += " active";
       } catch(err) {}
 
       // AddEventListener

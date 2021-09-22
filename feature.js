@@ -111,6 +111,12 @@
       return !!test;
     })(),
 
+    // Test if CSS flexbox is supported
+    cssFlexbox : (function() {
+      var test = util.pfx("flexBasis") !== null;
+      return !!test;
+    })(),
+
     // Test if addEventListener is supported
     addEventListener: !!window.addEventListener,
 
