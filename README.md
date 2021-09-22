@@ -95,6 +95,7 @@ feature.placeholder
 feature.localStorage
 feature.matchMedia
 feature.pictureElement
+feature.promise
 feature.querySelectorAll
 feature.remUnit
 feature.serviceWorker

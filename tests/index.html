@@ -85,6 +85,9 @@
         <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP4z8DwHwAFAAH/VscvDQAAAABJRU5ErkJggg==" alt="">
       </picture>
 
+      <h4>Promises</h4>
+      <div class="test" id="promise"></div>
+
       <h4>CORS</h4>
       <div class="test" id="cors"></div>
 
@@ -161,6 +164,7 @@
       log(feature.srcset, "Srcset attribute");
       log(feature.sizes, "Sizes attribute");
       log(feature.pictureElement, "Picture element");
+      log(feature.promise, "Promises");
       log(feature.canvas, "Canvas");
       log(feature.svg, "SVG");
       log(feature.webGL, "WebGL");
@@ -309,6 +313,14 @@
         var needsPlaceholder = document.getElementById("placeholder");
         if ("placeholder" in document.createElement("input")) {
           needsPlaceholder.className += " active";
+        }
+      } catch(err) {}
+
+      // Promise
+      try {
+        var needsPromise = document.getElementById("promise");
+        if (feature.promise) {
+          needsPromise.className += " active";
         }
       } catch(err) {}
 
