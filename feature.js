@@ -53,11 +53,6 @@
     },
 
     /**
-     * Test if it's an old device that we want to filter out
-     */
-    old: !!(/(Android\s(1\.|2\.))|(Silk\/1\.)/i.test(nav.userAgent)),
-
-    /**
      * Function that takes a standard CSS property name as a parameter and
      * returns it's prefixed version valid for current browser it runs in
      */
@@ -95,13 +90,13 @@
   var Feature = {
     // Test if CSS 3D transforms are supported
     css3Dtransform: (function() {
-      var test = (!util.old && util.pfx('perspective') !== null);
+      var test = (util.pfx('perspective') !== null);
       return !!test;
     })(),
 
     // Test if CSS transforms are supported
     cssTransform: (function() {
-      var test = (!util.old && util.pfx('transformOrigin') !== null);
+      var test = (util.pfx('transformOrigin') !== null);
       return !!test;
     })(),
 

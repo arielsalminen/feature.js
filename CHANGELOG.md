@@ -1,3 +1,8 @@
+# v2.0.0 (2021-09-20)
+
+- Remove old browser checks for Android 1 + 2, Silk 1
+- Remove navigation.userAgent deprecation warning
+
 # v1.1.3 (2021-06-15)
 
 - Adds test for “Fetch”.

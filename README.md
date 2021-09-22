@@ -4,7 +4,9 @@ Feature.js is a fast, simple and lightweight browser feature detection library. 
 
 With [Feature.js](http://featurejs.com/), it’s simple to build progressively enhanced experiences that use feature detection to determine if a code can be executed in the user’s browser.
 
+# Version Note
 
+`v1.x` makes considerations for very early Android & Amazon Silk browsers whereas `v2.x` drops this support.
 
 ## How to use
 
