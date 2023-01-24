@@ -10,4 +10,4 @@ Alternatively, if you just want to see the site locally on macOS, you can run `p
 
 ### License
 
-(C) 2019 Viljami Salminen. All rights reserved.
+(C) 2023 Ariel Salminen. All rights reserved.
