@@ -13,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/viljamis/feature.js.git"
+    "url": "git+https://github.com/arielsalminen/feature.js.git"
   },
-  "author": "Viljami Salminen",
+  "author": "Ariel Salminen",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/viljamis/feature.js/issues"
+    "url": "https://github.com/arielsalminen/feature.js/issues"
   },
-  "homepage": "https://github.com/viljamis/feature.js#readme",
+  "homepage": "https://github.com/arielsalminen/feature.js#readme",
   "devDependencies": {
     "eslint": "^6.6.0",
     "eslint-config-google": "^0.14.0",
